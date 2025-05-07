@@ -92,8 +92,8 @@ search([Node|Open], Closed, Sol,MxEnergy) :-
     search(SortedOpen, [Node|Closed], Sol,MxEnergy).
 
 % compare functions so we can sort
-compare_f(<, node(_,_,_,_,F1,_), node(_,_,_,_,F2,_)) :- F1 < F2.
-compare_f(>, node(_,_,_,_,F1,_), node(_,_,_,_,F2,_)) :- F1 > F2.
+compare_f(<, node(_,_,_,_,F1), node(_,_,_,_,F2)) :- F1 < F2.
+compare_f(>, node(_,_,_,_,F1), node(_,_,_,_,F2)) :- F1 > F2.
 compare_f(=, _, _):- !.
 
 
@@ -125,10 +125,6 @@ visualize_grid(Path) :-
        )
     ),
     nl.
-
-% Main execution
-%:- initialization(main).
-
 
 start:-
     write('Enter Starting Energy: '),
