@@ -127,10 +127,10 @@ visualize_grid(Path) :-
     nl.
 
 % Main execution
-:- initialization(main).
+%:- initialization(main).
 
 
-main:-
+start:-
     write('Enter Starting Energy: '),
     read(Energy),
     (integer(Energy), Energy > 0 ->
@@ -145,5 +145,4 @@ main:-
         )
     ;
         write('Invalid energy value. Please enter a positive integer.'), nl
-    ),
-    fail.
+    ).
