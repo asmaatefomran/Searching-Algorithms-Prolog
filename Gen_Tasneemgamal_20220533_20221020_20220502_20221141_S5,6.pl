@@ -244,4 +244,3 @@ start2 :-
     write('Invalid energy value. Please enter a positive integer.'), nl
     ).
 
-
